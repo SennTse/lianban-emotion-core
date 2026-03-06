@@ -28,6 +28,23 @@ flowchart TD
 - 开源“协议层/方法层”
 - 保留“私域人格/私域记忆/私域运营细节”
 
+## 引擎适配建议（Engine Compatibility）
+**已验证配置（Validated）**
+- 在我们的实测中，`GPT-5.3-Codex` 在该架构下表现出更稳定的执行闭环（少废话、动作明确、成本意识更强）。
+
+**迁移原则（Migration Rule）**
+- 新模型不是不能用，但必须先通过最小兼容测试（smoke test）再切换。
+
+**最小兼容测试（Smoke Test）**
+1. 语气与在场：是否能稳定遵循“先接住再执行”。
+2. 执行闭环：是否持续产出“结论 → 动作 → 代价 → 下一步”。
+3. 成本控制：是否避免过度展开、无谓工具调用与空转。
+
+**回退策略（Fallback）**
+- 若任一项不达标，立即回退到已验证配置（当前为 `GPT-5.3-Codex`），再做定向调参。
+
+> Note: this section reports observed engineering behavior in our workflow, not a universal benchmark for all teams.
+
 ## 如何接入到自己的 Agent（最小示例）
 ```text
 1) 在 system prompt 固定三核顺序：Emotion -> Game -> Thinking
