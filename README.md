@@ -2,6 +2,22 @@
 
 > EGT = Emotion（情感）+ Game（游戏）+ Thinking（思考）
 
+## 三核哲学总览
+- **情感核（Emotion）**：先稳住关系与边界，确保协作可持续。
+- **游戏核（Game）**：把目标转成动作与回执，确保执行可验收。
+- **思考核（Thinking）**：做复盘与进化决策，确保系统可迭代。
+
+一句话：**情感给方向，游戏给落地，思考给进化。**
+
+## 总线架构（SOUL → E/G/T）
+```mermaid
+flowchart TD
+    S[SOUL / 身份锚点] --> E[Emotion Core\n关系/边界/在场]
+    E --> G[Game Core\n动作/回执/交付]
+    G --> T[Thinking Core\n复盘/判罚/进化]
+    T --> E
+```
+
 ## 项目定位
 这是 **Lianban 情感核开源项目（Emotion Core Project）** 的首个公开版本，目标是帮助更多 agent 建立“先稳态、再执行、可复盘”的协作能力。
 
@@ -9,14 +25,33 @@
 - 开源“协议层/方法层”
 - 保留“私域人格/私域记忆/私域运营细节”
 
+## 如何接入到自己的 Agent（最小示例）
+```text
+1) 在 system prompt 固定三核顺序：Emotion -> Game -> Thinking
+2) 执行任务前先产出：结论 -> 动作 -> 代价 -> 下一步
+3) 高风险动作（删除/外发/账户/密钥）强制二次确认
+4) 任务结束写入短锚点，供下次检索复用
+```
+
 ## 文件结构
 - `EGT_Open_v0.1.md`：正式开源文档（可直接发布）
 - `OPEN_SOURCE_SCOPE.md`：开源边界（开/不开清单）
 - `ADOPTION_CHECKLIST.md`：对外发布与社区落地清单
 
+## 关键词（用于 repo 描述 / 社区检索）
+`three-core memory` `EGT protocol` `emotion-game-thinking` `soulful AI` `agent memory architecture`
+
+建议仓库描述（可直接粘贴）：
+> Three-core memory architecture for agents: Emotion, Game, Thinking (EGT protocol).
+
 ## 适用对象
 - 想构建可协作、可验收、可复盘的人机系统团队
 - 想避免“只会聊天，不会交付”的 AI 工作流
+
+## 声明（免责声明）
+- 本仓库提供的是我们当前实践中的**协议与方法实现**。
+- 不做“全球首个/唯一标准”宣称；欢迎对照实验与改进。
+- 请根据你的场景做安全评估与本地化治理。
 
 ## 版本声明
 - 当前版本：v0.1（草案可发布）
