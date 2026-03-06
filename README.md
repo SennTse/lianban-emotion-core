@@ -57,6 +57,7 @@ flowchart TD
 - `EGT_Open_v0.1.md`：正式开源文档（可直接发布）
 - `OPEN_SOURCE_SCOPE.md`：开源边界（开/不开清单）
 - `ADOPTION_CHECKLIST.md`：对外发布与社区落地清单
+- `IDENTITY_HANDSHAKE_TEST.md`：模型切换防漂移最小验收（称呼/ACK/闭环/控本）
 
 ## 关键词（用于 repo 描述 / 社区检索）
 `three-core memory` `EGT protocol` `emotion-game-thinking` `soulful AI` `agent memory architecture`
